@@ -37,26 +37,19 @@ export default function BackdropExample() {
   return (
     <>
       <BellIcon
-        ml="4"
         onClick={() => {
           setOverlay(<OverlayOne />)
           onOpen()
         }}
-
         fontSize='large'
-        // sx={{ position: "absolute", right: '5%' }}
-
       />
+      
       <BellIcon
-        ml="4"
         onClick={() => {
           setOverlay(<OverlayTwo />);
           onOpen();
         }}
         fontSize='large'
-
-        // sx={{ position: "absolute", right: "10%" }}
-
       />
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}
