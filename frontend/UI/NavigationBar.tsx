@@ -1,5 +1,4 @@
 // import Link from "next/link";
-import { Link } from '@mui/material';
 import { useState } from "react";
 import classes from "./NavigationBar.module.css";
 import { RootStateOrAny, useSelector } from "react-redux";
@@ -9,6 +8,7 @@ import { useRouter } from "next/router";
 import NotificationModal from "./NotificationModal";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import SummarizeRoundedIcon from "@mui/icons-material/SummarizeRounded";
+import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 
 // import SettingModal from "../components/settingModal";
 
@@ -29,27 +29,43 @@ const NavigationBar = () => {
     router.replace("/");
   };
 
+  const onReportLinkHandler = () => {
+    router.push("/report");
+  };
+
+  const onProfileLinkHandler = () => {
+    router.push("/profile");
+  };
+
+  const onHomeLinkHandler = () => {
+    router.replace("/home");
+  };
+
   return (
     <div className={classes.navbar}>
-      <img src="./logo.png" alt="PeePaw" />
+      {!isLogged && <img src="logo.png" alt="PeePaw" />}
+      {isLogged && (
+        <button onClick={onHomeLinkHandler}>
+          <img src="logo.png" alt="PeePaw" />
+        </button>
+      )}
       {!isLogged && (
         <button onClick={onClickHandler}>{!isTrue ? "Login" : "SignUp"}</button>
       )}
       {isLogged && (
-        <LogoutRoundedIcon
-          fontSize="medium"
-          onClick={logoutClickHandler}
-        />
+        <LogoutRoundedIcon fontSize="medium" onClick={logoutClickHandler} />
       )}
       {isLogged && <NotificationModal />}
       {isLogged && (
-        <SummarizeRoundedIcon
-          component={Link}
-          to='./profile'
-        />
+        <button onClick={onReportLinkHandler}>
+          <SummarizeRoundedIcon />
+        </button>
       )}
-      {/* {isLogged && <Link href="./profile">Profile</Link>} */}
-      {/* {isLogged && <Link href="./home">Home</Link>} */}
+      {isLogged && (
+        <button onClick={onProfileLinkHandler}>
+          <PeopleAltRoundedIcon />
+        </button>
+      )}
     </div>
   );
 };
