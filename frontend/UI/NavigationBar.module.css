@@ -2,20 +2,12 @@
     width: 100%;
     background-color: rgb(174, 174, 245);
     overflow: auto;
-  }
-  /* Navbar links */
-  .navbar a {
-    float: right;
-    text-align: center;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
+    display: flex;
+    align-items: center;
+
   }
 
   .navbar img{
-    /* border: 2px solid black;
-    background: url('./logo.png'); */
     float: left;
     text-align: center;
     padding: 8px;

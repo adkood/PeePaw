@@ -1,4 +1,3 @@
-import { BoxUi } from "../UI/BoxUi";
 import classes from "./NewReport.module.css";
 import { Container } from '@mui/material';
 

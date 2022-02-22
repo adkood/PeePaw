@@ -1,0 +1,8 @@
+.tester{
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: calc((100% - 50px)/2);
+    top: calc((100% - 50px)/2);
+}
