@@ -1,5 +1,5 @@
 import React from "react";
-import FullProfile from "../../components/FullProfile";
+import FullProfile from "../../components/profile/FullProfile";
 import Card from "../../UI/Card";
 
 const Profile = () => {
