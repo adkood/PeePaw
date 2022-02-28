@@ -1,9 +1,16 @@
 .navbar {
   width: 100%;
+  height: 20%;
   background-color: #9decf9;
   overflow: hidden;
   display: flex;
+  /* flex-direction: row-reverse; */
   align-items: center;
+}
+
+.navbar:hover{
+  background-color: black;
+  color: #9decf9;
 }
 
 .navbar > button {
@@ -19,7 +26,6 @@
 
 .navbar > *:hover {
   box-sizing: border-box;
-  color: #4768ff;
 
   -webkit-animation-name: spin;
   -webkit-animation-duration: 1000ms;
