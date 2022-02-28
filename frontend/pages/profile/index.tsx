@@ -32,10 +32,10 @@ const Profile = () => {
   };
 
   return (
-    <Card>
+    <>
       {/* <YourProfile onPostingData={onPostingDataHandler} /> */}
       <FullProfile/>
-    </Card>
+    </>
   );
 };
 

@@ -1,9 +1,9 @@
-import Login from "../authentication/LogIn";
-
+import Login from '../authentication/LogIn';
 const Auth = () => {
   return (
-    <Login/>
+      <Login />
   );
 };
 
 export default Auth;
+  
