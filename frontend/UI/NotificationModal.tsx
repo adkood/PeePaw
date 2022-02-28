@@ -41,7 +41,7 @@ export default function BackdropExample() {
           setOverlay(<OverlayOne />)
           onOpen()
         }}
-        fontSize='large'
+        fontSize='x-large'
       />
       
       <BellIcon
@@ -49,7 +49,7 @@ export default function BackdropExample() {
           setOverlay(<OverlayTwo />);
           onOpen();
         }}
-        fontSize='large'
+        fontSize='x-large'
       />
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}

@@ -58,7 +58,7 @@ const NavigationBar = () => {
       {isLogged && <NotificationModal />}
       {isLogged && (
         <button onClick={onReportLinkHandler}>
-          <SummarizeRoundedIcon />
+          <SummarizeRoundedIcon fontSize="medium"/>
         </button>
       )}
       {isLogged && (
