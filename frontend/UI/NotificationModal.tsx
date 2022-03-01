@@ -21,14 +21,14 @@ export default function BackdropExample() {
     />
   );
 
-  const OverlayTwo = () => (
-    <ModalOverlay
-      bg="none"
-      backdropFilter="auto"
-      backdropInvert="80%"
-      backdropBlur="2px"
-    />
-  );
+  // const OverlayTwo = () => (
+  //   <ModalOverlay
+  //     bg="none"
+  //     backdropFilter="auto"
+  //     backdropInvert="80%"
+  //     backdropBlur="2px"
+  //   />
+  // );
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [overlay, setOverlay] = React.useState(<OverlayOne />);
@@ -44,13 +44,13 @@ export default function BackdropExample() {
         fontSize='x-large'
       />
       
-      <BellIcon
+      {/* <BellIcon
         onClick={() => {
           setOverlay(<OverlayTwo />);
           onOpen();
         }}
         fontSize='x-large'
-      />
+      /> */}
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}
         <ModalContent>

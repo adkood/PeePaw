@@ -20,7 +20,7 @@ const DUMMY_DATA = [
       'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',
   },
   {
-    userName: 'Catherine Negi',
+    userName: 'Catherine Sharma',
     postCaption: 'What a parrot ;)',
     postLikes: 136,
     profilePic:

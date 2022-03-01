@@ -9,6 +9,7 @@ import NotificationModal from "./NotificationModal";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import SummarizeRoundedIcon from "@mui/icons-material/SummarizeRounded";
 import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
+import { Image } from '@chakra-ui/react';
 
 // import SettingModal from "../components/settingModal";
 
@@ -46,7 +47,7 @@ const NavigationBar = () => {
       {!isLogged && <img src="logo.png" alt="PeePaw" />}
       {isLogged && (
         <button onClick={onHomeLinkHandler}>
-          <img src="logo.png" alt="PeePaw" />
+          <Image src="logo.jpeg"/>
         </button>
       )}
       {!isLogged && (
