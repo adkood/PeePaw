@@ -47,7 +47,7 @@ const NavigationBar = () => {
       {!isLogged && <img src="logo.png" alt="PeePaw" />}
       {isLogged && (
         <button onClick={onHomeLinkHandler}>
-          <Image src="logo.jpeg"/>
+          <Image src={`${__dirname}/logo.jpeg`} alt="PeePaw" />
         </button>
       )}
       {!isLogged && (
