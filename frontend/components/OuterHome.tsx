@@ -25,7 +25,6 @@ const OuterHome = () => {
         // bg="#00A3C4"
       >
         <Box
-          boxShadow="dark-lg"
           p="6"
           rounded="md"
           bg="white"
@@ -35,10 +34,10 @@ const OuterHome = () => {
           top={'6%'}
           left={'3%'}
           display="flex"
-          justifyItems='center'
+          justifyItems="center"
           flexDirection="column"
           alignItems="center"
-          overflow='scroll'
+          overflow="scroll"
         >
           <PostCard></PostCard>
           <PostCard></PostCard>
