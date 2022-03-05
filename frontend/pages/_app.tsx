@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { ChakraProvider } from '@chakra-ui/react';
 
 import store from '../store';
-import Layout from '../UI/Layout';
-import Card from '../UI/Card';
+import Layout from '../components/UI/Layout';
+import Card from '../components/UI/Card';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

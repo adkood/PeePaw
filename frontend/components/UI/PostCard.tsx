@@ -6,7 +6,7 @@ import { Image } from '@chakra-ui/react';
 
 const PostCard = () => {
   return (
-    <div className={classes.container}>
+    <div className={classes.container} >
       <div className={classes.accountAndTimeCont}>
         <div className={classes.account}>
 			<div className={classes.accountPhoto}>

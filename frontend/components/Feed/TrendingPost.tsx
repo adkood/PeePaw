@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Image } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Image, position } from '@chakra-ui/react'
 import { FavoriteBorderOutlined } from '@mui/icons-material';
 import React from 'react'
 

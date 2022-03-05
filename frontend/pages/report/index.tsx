@@ -1,5 +1,5 @@
 import NewReport from "../../components/NewReport";
-import Card from "../../UI/Card";
+import Card from "../../components/UI/Card";
 
 const Report = () => {
   return (

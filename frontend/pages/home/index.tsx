@@ -1,5 +1,5 @@
-import Home from "../../components/Home";
-import OuterHome from "../../components/OuterHome";
+import Home from "../../components/Home/Home";
+import OuterHome from "../../components/Home/OuterHome";
 
 const HomePage = () => {
   return (

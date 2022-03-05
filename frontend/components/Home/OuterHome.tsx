@@ -1,7 +1,7 @@
 import { calc, Grid, GridItem } from '@chakra-ui/react';
 import PostCard from '../UI/PostCard';
-import MostLiked from './Feed/MostLiked';
-import TrendingPost from './Feed/TrendingPost';
+import MostLiked from '../Feed/MostLiked';
+import TrendingPost from '../Feed/TrendingPost';
 import { Box } from '@chakra-ui/react';
 
 const OuterHome = () => {
@@ -22,6 +22,7 @@ const OuterHome = () => {
       <GridItem
         rowSpan={2}
         colSpan={3}
+        // overflow="hidden"
         // bg="#00A3C4"
       >
         <Box
@@ -37,7 +38,21 @@ const OuterHome = () => {
           justifyItems="center"
           flexDirection="column"
           alignItems="center"
-          overflow="scroll"
+          overflowY="scroll"
+          css={{
+            '&::-webkit-scrollbar': {
+              width: '0' /* Remove scrollbar space */,
+              background:
+                'transparent' /* Optional: just make scrollbar invisible */,
+            },
+            //   '&::-webkit-scrollbar-track': {
+            //     width: '6px',
+            //   },
+            //   '&::-webkit-scrollbar-thumb': {
+            //     // background: scrollbarColor,
+            //     borderRadius: '24px',
+            //   },
+          }}
         >
           <PostCard></PostCard>
           <PostCard></PostCard>

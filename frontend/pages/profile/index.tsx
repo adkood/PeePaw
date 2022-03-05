@@ -1,6 +1,6 @@
 import React from "react";
 import FullProfile from "../../components/profile/FullProfile";
-import Card from "../../UI/Card";
+import Card from "../../components/UI/Card";
 
 const Profile = () => {
   const onPostingDataHandler = async (data: {

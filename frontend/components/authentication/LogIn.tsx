@@ -1,6 +1,78 @@
+// import classes from "./LogIn.module.css";
+// import React, { useEffect } from "react";
+// import { useRef } from "react";
+// import { useDispatch } from "react-redux";
+// import { authSliceActions } from "../store";
+// import { useRouter } from "next/router";
+
+// const Login = () => {
+//   const emailInputRef = useRef<HTMLInputElement>(null);
+//   const passwordInputRef = useRef<HTMLInputElement>(null);
+//   const dispatch = useDispatch();
+//   const router = useRouter();
+
+//   const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+//     event.preventDefault();
+
+//     const enteredEmail = emailInputRef.current!.value;
+//     const enteredPassword = passwordInputRef.current!.value;
+
+//     // dispatch(authSliceActions.login());
+//     try {
+//       const response = await fetch(
+//         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDzXpKIbeKwgDndJpk1QvJws49LbGpnQWk",
+//         {
+//           method: "POST",
+//           body: JSON.stringify({
+//             email: enteredEmail,
+//             password: enteredPassword,
+//             returnSecureToken: true,
+//           }),
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//         }
+//       );
+
+//       if (!response.ok) {
+//         throw new Error("Authentication Failed!");
+//       }
+
+//       const data = await response.json();
+//       const TokenId = data.idToken;
+//       console.log(data.name);
+//       console.log(data.petName);
+//       dispatch(authSliceActions.login(TokenId));
+//       router.replace('/home');
+
+//     } catch (err) {
+//       alert(err);
+//     }
+//   };
+
+//   return (
+//     <form className={classes.form} onSubmit={onSubmitHandler}>
+//       <input
+//         className={classes.input}
+//         type="text"
+//         placeholder="Enter your Email"
+//         ref={emailInputRef}
+//       ></input>
+//       <input
+//         className={classes.input}
+//         type="text"
+//         placeholder="Enter your Password"
+//         ref={passwordInputRef}
+//       ></input>
+//       <button>Login</button>
+//     </form>
+//   );
+// };
+// export default Login;
+
 import * as React from "react";
 import { useDispatch } from "react-redux";
-import { authSliceActions } from "../store";
+import { authSliceActions } from "../../store";
 import { useRouter } from "next/router";
 
 import Avatar from "@mui/material/Avatar";
@@ -36,32 +108,39 @@ function Copyright(props: any) {
 }
 
 const theme = createTheme();
-export const SignUp = () => {
+
+export default function Login() {
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   // eslint-disable-next-line no-console
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
   const dispatch = useDispatch();
   const router = useRouter();
-
+  
   const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
 
     const data = new FormData(event.currentTarget);
     // const enteredEmail = emailInputRef.current!.value;
     // const enteredPassword = passwordInputRef.current!.value;
     const enteredEmail = data.get("email");
     const enteredPassword = data.get("password");
-    const enteredName = data.get('name');
-    const enteredPetName = data.get('petName');
 
     // dispatch(authSliceActions.login());
     try {
       const response = await fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDzXpKIbeKwgDndJpk1QvJws49LbGpnQWk",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDzXpKIbeKwgDndJpk1QvJws49LbGpnQWk",
         {
           method: "POST",
           body: JSON.stringify({
             email: enteredEmail,
             password: enteredPassword,
-            name: enteredName,
-            petName: enteredPetName,
             returnSecureToken: true,
           }),
           headers: {
@@ -76,7 +155,8 @@ export const SignUp = () => {
 
       const data = await response.json();
       const TokenId = data.idToken;
-      // console.log(data);
+      console.log(data.name);
+      console.log(data.petName);
       dispatch(authSliceActions.login(TokenId));
       router.replace("/home");
     } catch (err) {
@@ -94,8 +174,7 @@ export const SignUp = () => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage:
-              "url(https://cdn.pixabay.com/photo/2020/11/10/09/06/man-5728989_1280.png)",
+            backgroundImage: "url(https://cdn.pixabay.com/photo/2020/11/10/09/06/man-5728989_1280.png)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -119,7 +198,7 @@ export const SignUp = () => {
               {/* <LockOutlinedIcon /> */}
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign Up
+              Sign in
             </Typography>
             <Box
               component="form"
@@ -127,26 +206,6 @@ export const SignUp = () => {
               onSubmit={onSubmitHandler}
               sx={{ mt: 1 }}
             >
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="name"
-                label="Your Name"
-                type="name"
-                id="name"
-                autoComplete="Name"
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="petName"
-                label="Pet Name"
-                type="petName"
-                id="petName"
-                autoComplete="Pet Name"
-              />
               <TextField
                 margin="normal"
                 required
@@ -177,8 +236,20 @@ export const SignUp = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign Up
+                Sign In
               </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="/signup" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              </Grid>
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
@@ -186,4 +257,4 @@ export const SignUp = () => {
       </Grid>
     </ThemeProvider>
   );
-};
+}

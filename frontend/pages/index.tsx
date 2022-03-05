@@ -1,4 +1,4 @@
-import Login from '../authentication/LogIn';
+import Login from '../components/authentication/LogIn';
 const Auth = () => {
   return (
       <Login />
