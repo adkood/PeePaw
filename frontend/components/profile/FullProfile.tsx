@@ -1,5 +1,5 @@
 import { Box, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
-import OnlineUser from '../UI/onlineUser';
+import OnlineUser from '../UI/OnlineUser';
 import RecommendedUser from '../UI/RecommendedUser';
 import PostCard from '../UI/PostCard';
 import YourProfile from './YourProfile';
