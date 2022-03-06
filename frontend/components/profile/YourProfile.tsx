@@ -5,7 +5,7 @@ import { Box, Flex, Image, Skeleton, SkeletonCircle, SkeletonText } from '@chakr
 export default function YourProfile() {
   return (
     <Box >
-        <Skeleton startColor='pink.500' endColor='orange.500' height='20px' />
+        <Skeleton startColor='orange.500' endColor='pink.500' height='20px'/>
       <Box display='flex' justifyContent='space-around'>
       <SkeletonCircle size='22vh' isLoaded>
         <Box borderRadius='50%' overflow='hidden' width='22vh' height='22vh'>
