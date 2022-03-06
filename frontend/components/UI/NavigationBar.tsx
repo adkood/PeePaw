@@ -10,6 +10,8 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import SummarizeRoundedIcon from '@mui/icons-material/SummarizeRounded';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import { Box, Button, Flex, Image } from '@chakra-ui/react';
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+
 
 // import SettingModal from "../components/settingModal";
 
@@ -43,6 +45,7 @@ const NavigationBar = () => {
   };
 
   return (
+    <Skeleton isLoaded> 
     <Flex w="100%" h="5rem" justifyContent={'center'} alignItems="center">
       <Flex
         w={'100%'}
@@ -51,8 +54,6 @@ const NavigationBar = () => {
         bgColor={'blue'}
         justifyContent={'center'}
         alignItems="center"
-        borderBottomLeftRadius={'50%'}
-        borderBottomRightRadius={'50%'}
         position="sticky"
       >
         {/* {!isLogged && <img src="logo.png" alt="PeePaw" />} */}
@@ -93,6 +94,7 @@ const NavigationBar = () => {
         </Flex>
       </Flex>
     </Flex>
+    </Skeleton>
   );
 };
 

@@ -3,7 +3,6 @@ import OnlineUser from '../UI/onlineUser';
 import RecommendedUser from '../UI/RecommendedUser';
 import PostCard from '../UI/PostCard';
 import YourProfile from './YourProfile';
-import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 
 const Dummy_OnlineUsers = [
   {
@@ -36,15 +35,6 @@ const FullProfile = () => {
     >
       <GridItem rowSpan={2} colSpan={4} margin="20px">
         <YourProfile />
-        {/* <Skeleton /> */}
-        {/* <Flex width="100%" height="100%" alignItems='center'>
-          <Skeleton
-            startColor="pink.500"
-            endColor="orange.500"
-            height="10%"
-            width="100%"
-          />
-        </Flex> */}
       </GridItem>
       <GridItem rowSpan={8} colSpan={1} margin="20px">
         <Flex
