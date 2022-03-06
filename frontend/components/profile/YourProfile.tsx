@@ -1,22 +1,21 @@
-import classes from "./YourProfile.module.css";
-import NewPost from "./NewPost";
+import classes from './YourProfile.module.css';
+import NewPost from './NewPost';
+import { Box, Flex, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 
 export default function YourProfile() {
   return (
-    <div className={classes.container}>
-      <div className={classes.petName}>
+    <Box >
+        <Skeleton startColor='pink.500' endColor='orange.500' height='20px' />
+      <Box display='flex' justifyContent='space-between'>
+      <SkeletonCircle size='22vh' >
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/9/93/Pet-rebbit-on-Swing_%28seat%29-in-beijing.jpg"
           alt="pet image"
         />
-      </div>
-      <div className={classes.ownerName}>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Da_Nang%2C_Vietnam._A_young_Marine_private_waits_on_the_beach_during_the_Marine_landing._-_NARA_-_532432_%28restored%29.jpg/800px-Da_Nang%2C_Vietnam._A_young_Marine_private_waits_on_the_beach_during_the_Marine_landing._-_NARA_-_532432_%28restored%29.jpg"
-          alt="owner image"
-        />
-      </div>
-      <NewPost />
-    </div>
+      </SkeletonCircle>
+      <Skeleton height='22vh' width='60vw'></Skeleton>
+      </Box>
+      {/* <NewPost /> */}
+    </Box>
   );
 }
